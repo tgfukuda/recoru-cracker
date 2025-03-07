@@ -144,7 +144,7 @@ async function goToPreviousMonth(page) {
 
 async function automateRecoru(authId, password, contractId) {
     const browser = await puppeteer.launch({
-        headless: !!process.env.HEADLESS,
+        headless: !!process.env.HEADLESS && process.env.HEADLESS !== '0',
         slowMo: 10,
         args: [
             '--no-sandbox',
